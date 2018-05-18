@@ -1,9 +1,12 @@
 package com.yuesth.chatkito;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +24,8 @@ public class recyclerContactAdapter extends RecyclerView.Adapter<recyclerContact
     Context context;
     List<contact_model> list_contact = new ArrayList<>();
     Dialog myDialog;
+
+
 
     public recyclerContactAdapter(Context context, List<contact_model> list_contact) {
         this.context = context;
@@ -65,6 +71,7 @@ public class recyclerContactAdapter extends RecyclerView.Adapter<recyclerContact
     public int getItemCount() {
         return list_contact.size();
     }
+
 
     class myViewHolder extends RecyclerView.ViewHolder{
         public myViewHolder(View itemView) {
